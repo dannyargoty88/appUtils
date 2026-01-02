@@ -1,0 +1,207 @@
+<!-- CSS específico del módulo -->
+<link rel="stylesheet" href="modules/financiero/calculadora-inversion/styles.css">
+
+<div class="card finanzas-container">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-dollar-sign"></i>
+            Panel de Finanzas
+        </h2>
+    </div>
+    
+    <!-- Calculadora de Inversión -->
+    <div class="calculadora-inversion">
+        <div class="calc-header">
+            <h3><i class="fas fa-calculator"></i> Calculadora de Inversión</h3>
+            <p>Calcula la rentabilidad de tu inversión con todos los descuentos aplicables</p>
+        </div>
+        
+        <div class="calc-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="valorInvertir">Valor a Invertir ($)</label>
+                    <input type="text" id="valorInvertir" class="form-input" placeholder="0" inputmode="numeric">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tasaEfectiva">Tasa Efectiva Anual (%)</label>
+                    <input type="number" id="tasaEfectiva" class="form-input" placeholder="0" min="0" max="100" step="0.01">
+                </div>
+                
+                <div class="form-group">
+                    <label for="plazoDias">Plazo en Días</label>
+                    <input type="number" id="plazoDias" class="form-input" placeholder="0" min="1" max="3650">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha de Inicio (Opcional)</label>
+                    <input type="date" id="fechaInicio" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="retefuente">ReteFuente (%)</label>
+                    <input type="number" id="retefuente" class="form-input" value="4" min="0" max="100" step="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="aplica4x1000">Aplica 4x1000</label>
+                    <select id="aplica4x1000" class="form-input">
+                        <option value="si">SI</option>
+                        <option value="no">NO</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="calc-actions">
+                <button id="calcularBtn" class="btn-calculate">
+                    <i class="fas fa-calculator"></i> Calcular Inversión
+                </button>
+                <button id="limpiarBtn" class="btn-clear">
+                    <i class="fas fa-broom"></i> Limpiar
+                </button>
+            </div>
+        </div>
+        
+        <!-- Resultado del Cálculo -->
+        <div id="resultadoCalculadora" class="calc-result" style="display: none;">
+            <h4><i class="fas fa-chart-line"></i> Resumen de la Inversión</h4>
+            
+            <div class="result-table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>Concepto</strong></td>
+                            <td><strong>Valor</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Valor invertido</td>
+                            <td id="resValorInvertido">$0</td>
+                        </tr>
+                        <tr>
+                            <td>Tasa E.A.</td>
+                            <td id="resTasaEA">0%</td>
+                        </tr>
+                        <tr>
+                            <td>Días</td>
+                            <td id="resDias">0</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha inicio</td>
+                            <td id="resFechaInicio">-</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha final</td>
+                            <td id="resFechaFinal">-</td>
+                        </tr>
+                        <tr class="highlight-positive">
+                            <td>Rentabilidad generada</td>
+                            <td id="resRentabilidad">$0</td>
+                        </tr>
+                        <tr class="highlight-positive">
+                            <td>Total con rentabilidad</td>
+                            <td id="resTotalConRentabilidad">$0</td>
+                        </tr>
+                        <tr class="highlight-negative">
+                            <td>ReteFuente <span id="resPorcentajeRete">4%</span></td>
+                            <td id="resRetefuente">$0</td>
+                        </tr>
+                        <tr class="highlight-negative" id="fila4x1000Rentabilidad">
+                            <td>4x1000 sobre (Rentabilidad - ReteFuente)</td>
+                            <td id="res4x1000Rentabilidad">$0</td>
+                        </tr>
+                        <tr class="highlight-positive">
+                            <td>Subtotal</td>
+                            <td id="resSubtotal">$0</td>
+                        </tr>
+                        <tr class="highlight-negative" id="fila4x1000">
+                            <td>Descuento 4x1000</td>
+                            <td id="resDescuento4x1000">$0</td>
+                        </tr>
+                        <tr class="total-final">
+                            <td><strong>Valor final neto</strong></td>
+                            <td id="resValorFinalNeto"><strong>$0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="profit-summary">
+                <div class="profit-card positive">
+                    <div class="profit-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="profit-info">
+                        <h4 id="gananciaNeta">$0</h4>
+                        <p>Ganancia Neta</p>
+                    </div>
+                </div>
+                
+                <div class="profit-card neutral">
+                    <div class="profit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="profit-info">
+                        <h4 id="rentabilidadEfectiva">0%</h4>
+                        <p>Rentabilidad Efectiva</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Historial de Consultas -->
+        <div class="historial-consultas">
+            <div class="calc-header">
+                <h3><i class="fas fa-history"></i> Historial de Consultas</h3>
+                <p>Registro de todas las inversiones calculadas</p>
+            </div>
+            
+            <div class="historial-actions">
+                <button id="limpiarHistorialBtn" class="btn-clear">
+                    <i class="fas fa-trash"></i> Limpiar Historial
+                </button>
+                <button id="exportarHistorialBtn" class="btn-export">
+                    <i class="fas fa-download"></i> Exportar CSV
+                </button>
+                <button id="exportarJSONBtn" class="btn-export-json">
+                    <i class="fas fa-file-export"></i> Exportar JSON
+                </button>
+                <button id="importarJSONBtn" class="btn-import-json">
+                    <i class="fas fa-file-import"></i> Importar JSON
+                </button>
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+            
+            <div class="historial-table-container">
+                <table id="historialTable" class="historial-table">
+                    <thead>
+                        <tr>
+                            <th style="display: none;">Fecha Consulta</th>
+                            <th>Valor Invertido</th>
+                            <th>Tasa E.A.</th>
+                            <th>Días</th>
+                            <th>Rentabilidad</th>
+                            <th>Total con Rentabilidad</th>
+                            <th>ReteFuente 4%</th>
+                            <th>4x1000 sobre Rent-Rete</th>
+                            <th>Subtotal</th>
+                            <th>Descuento 4x1000</th>
+                            <th>Valor final neto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historialBody">
+                        <tr class="no-data">
+                            <td colspan="12" class="text-center">
+                                <i class="fas fa-inbox"></i>
+                                No hay consultas registradas
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript específico del módulo -->
+<script src="modules/financiero/calculadora-inversion/script.js"></script>

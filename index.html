@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Como favicon en el head - Fondo transparente -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPCEtLSBJY29ubyB0YXNrcyBjb24gZm9uZG8gdHJhbnNwYXJlbnRlIC0tPgogIDxwYXRoIGZpbGw9IiMwMDczZmYiIGQ9Ik0xMjggMTYwaDI1NnY2NEgxMjh6bTAgMTI4aDI1NnY2NEgxMjh6bTAgMTI4aDI1NnY2NEgxMjh6Ii8+CiAgPHJlY3QgeD0iMzIiIHk9IjE0NCIgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwNzNmZiIgc3Ryb2tlLXdpZHRoPSIxNiIvPgogIDxwb2x5bGluZSBwb2ludHM9IjU2LDIwOCA5NiwyNzIgMTYwLDE2OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDA3M2ZmIiBzdHJva2Utd2lkdGg9IjI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+" type="image/svg+xml">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-tasks"></i>
+                <span class="logo-text">Mi Dashboard</span>
+            </div>
+            <button id="toggleSidebar" class="toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <!-- Opción Financiero con submenú -->
+                <li class="nav-item-with-submenu">
+                    <a href="#" class="nav-link nav-parent active" data-section="financiero">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="nav-text">Financiero</span>
+                        <i class="fas fa-chevron-down submenu-arrow"></i>
+                    </a>
+                    <ul class="submenu active">
+                        <li>
+                            <a href="#" class="nav-link submenu-link" data-section="calculadora-inversion">
+                                <i class="fas fa-calculator"></i>
+                                <span class="nav-text">Calculadora de Inversión</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link submenu-link" data-section="calculadora-4x1000">
+                                <i class="fas fa-percentage"></i>
+                                <span class="nav-text">Calculadora 4x1000</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Opción Desarrollo con submenú -->
+                <li class="nav-item-with-submenu">
+                    <a href="#" class="nav-link nav-parent" data-section="desarrollo">
+                        <i class="fas fa-code"></i>
+                        <span class="nav-text">Desarrollo</span>
+                        <i class="fas fa-chevron-down submenu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="nav-link submenu-link" data-section="comparar-textos">
+                                <i class="fas fa-equals"></i>
+                                <span class="nav-text">Comparar Textos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link submenu-link" data-section="links-utils">
+                                <i class="fas fa-link"></i>
+                                <span class="nav-text">Links Utils</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <button id="mobileSidebarToggle" class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="breadcrumb">
+                    <span id="currentSection">Financiero</span>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <div class="datetime">
+                    <span id="currentDate"></span>
+                    <span id="currentTime"></span>
+                </div>
+                <div class="user-menu">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <div id="contentArea" class="content-area">
+            <!-- El contenido se cargará dinámicamente aquí -->
+        </div>
+    </div>
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="overlay"></div>
+
+    <script src="js/main.js"></script>
+</body>

@@ -1,0 +1,82 @@
+<!-- CSS específico del módulo -->
+<link rel="stylesheet" href="modules/desarrollo/comparar-textos/styles.css">
+
+<!-- Comparador de Textos Module -->
+<div class="card comparar-textos-container">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-equals"></i>
+            Comparador de Textos
+        </h2>
+    </div>
+    <p style="color: #7f8c8d; margin-bottom: 20px;">Herramienta para comparar dos textos y encontrar diferencias entre ellos.</p>
+    
+    <div class="text-comparison-area">
+        <div class="text-input-container">
+            <label class="text-input-label">Texto 1:</label>
+            <textarea id="texto1" class="text-input" placeholder="Ingresa el primer texto aquí..."></textarea>
+        </div>
+        <div class="text-input-container">
+            <label class="text-input-label">Texto 2:</label>
+            <textarea id="texto2" class="text-input" placeholder="Ingresa el segundo texto aquí..."></textarea>
+        </div>
+    </div>
+    
+    <div class="comparison-controls">
+        <button id="comparar-btn" class="btn-primary" onclick="compararTextos()">
+            <i class="fas fa-search"></i> Comparar Textos
+        </button>
+        <button id="limpiar-btn" class="btn-secondary" onclick="limpiarTextos()">
+            <i class="fas fa-eraser"></i> Limpiar
+        </button>
+    </div>
+    
+    <div id="resultadoComparacion" style="display: none;">
+        <h3 style="color: var(--secondary-dark); margin-bottom: 15px;">
+            <i class="fas fa-chart-bar" style="color: var(--accent-blue); margin-right: 10px;"></i>
+            Resultado de la Comparación
+        </h3>
+        <div class="stats-grid" style="margin-bottom: 20px;">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="porcentajeSimilitud">0%</h3>
+                    <p>Similitud</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-spell-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="palabrasComunes">0</h3>
+                    <p>Palabras Comunes</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-text-width"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="longitudTexto1">0</h3>
+                    <p>Caracteres Texto 1</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-text-width"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="longitudTexto2">0</h3>
+                    <p>Caracteres Texto 2</p>
+                </div>
+            </div>
+        </div>
+        <div id="diferenciasDetalle"></div>
+    </div>
+</div>
+
+<!-- JavaScript específico del módulo -->
+<script src="modules/desarrollo/comparar-textos/script.js"></script>

@@ -1,0 +1,123 @@
+<!-- CSS específico del módulo -->
+<link rel="stylesheet" href="modules/financiero/calculadora-4x1000/styles.css">
+
+<div class="card calculadora-4x1000-container">
+    <div class="card-header">
+        <h2 class="card-title">
+            <i class="fas fa-percentage"></i>
+            Calculadora 4x1000
+        </h2>
+    </div>
+    
+    <!-- Calculadora 4x1000 -->
+    <div class="calculadora-4x1000">
+        <div class="calc-header">
+            <h3><i class="fas fa-percentage"></i> Calculadora del Impuesto 4x1000</h3>
+            <p>Calcula el valor del impuesto 4x1000 sobre transacciones financieras</p>
+        </div>
+        
+        <div class="calc-form">
+            <div class="form-grid-simple">
+                <div class="form-group-main">
+                    <label for="valorTransaccion">Valor de la Transacción ($)</label>
+                    <input type="text" id="valorTransaccion" class="form-input-main" placeholder="0" inputmode="numeric">
+                </div>
+                
+                <div class="calc-actions-simple">
+                    <button id="btnCalcular4x1000" class="btn-calculate-4x1000">
+                        <i class="fas fa-calculator"></i> Calcular 4x1000
+                    </button>
+                    <button id="btnLimpiar4x1000" class="btn-clear-4x1000">
+                        <i class="fas fa-broom"></i> Limpiar
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resultado del Cálculo -->
+        <div id="resultadoCalculo4x1000" class="calc-result-4x1000" style="display: none;">
+            <h4><i class="fas fa-receipt"></i> Resultado del 4x1000</h4>
+            
+            <div class="result-cards">
+                <div class="result-card primary">
+                    <div class="result-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="result-info">
+                        <h4 id="valorTransaccionResult">$0</h4>
+                        <p>Valor de la Transacción</p>
+                    </div>
+                </div>
+                
+                <div class="result-card secondary">
+                    <div class="result-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="result-info">
+                        <h4 id="cuatroPorMilResult">$0</h4>
+                        <p>Impuesto 4x1000</p>
+                    </div>
+                </div>
+                
+                <div class="result-card accent">
+                    <div class="result-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="result-info">
+                        <h4 id="totalResult">$0</h4>
+                        <p>Total</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Historial de Cálculos -->
+        <div class="historial-4x1000">
+            <div class="calc-header">
+                <h3><i class="fas fa-history"></i> Historial de Cálculos 4x1000</h3>
+                <p>Registro de todos los cálculos del impuesto 4x1000 realizados</p>
+            </div>
+            
+            <div class="historial-actions">
+                <button id="btnLimpiarHistorial" class="btn-clear">
+                    <i class="fas fa-trash"></i> Limpiar Historial
+                </button>
+                <button id="btnExportarCSV" class="btn-export">
+                    <i class="fas fa-download"></i> Exportar CSV
+                </button>
+                <button id="btnExportarJSON" class="btn-export-json">
+                    <i class="fas fa-file-export"></i> Exportar JSON
+                </button>
+                <button id="btnImportarJSON" class="btn-import-json">
+                    <i class="fas fa-file-import"></i> Importar JSON
+                </button>
+                <input type="file" id="fileInput4x1000" accept=".json" style="display: none;">
+            </div>
+            
+            <div class="historial-table-container">
+                <table id="tablaHistorial4x1000" class="historial-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha Cálculo</th>
+                            <th>Valor Transacción</th>
+                            <th>Impuesto 4x1000</th>
+                            <th>Total</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="no-data">
+                            <td colspan="5" class="text-center">
+                                <i class="fas fa-inbox"></i>
+                                No hay cálculos registrados
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript específico del módulo -->
+<script src="modules/financiero/calculadora-4x1000/script.js"></script>

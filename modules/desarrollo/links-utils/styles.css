@@ -1,0 +1,447 @@
+/* Estilos específicos para Links Utils */
+
+/* Forzar visibilidad completa */
+.card, .card-body, .table-container, .utils-table {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: white !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Descripción del módulo */
+.card-description {
+    color: #7f8c8d !important;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Tabla de herramientas */
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+    margin-bottom: 20px;
+    background: white !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.utils-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white !important;
+    font-size: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.utils-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 15px !important;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.utils-table td {
+    padding: 15px !important;
+    border-bottom: 1px solid #e1e8ed;
+    vertical-align: middle;
+    background: white;
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #333 !important;
+}
+
+.utils-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa !important;
+}
+
+.utils-table tbody tr:hover {
+    background-color: #e3f2fd !important;
+    transition: background-color 0.3s ease;
+}
+
+.tool-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.tool-info i {
+    font-size: 1.2em;
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.tool-info strong {
+    color: #2c3e50 !important;
+    font-weight: 600;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Botones - Forzar visibilidad */
+.btn-primary, .btn-secondary {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+}
+
+/* Estilos para la búsqueda */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: inherit;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-box .fa-search {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #667eea;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.search-box button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #f0f0f0;
+    color: #666;
+}
+
+#searchStats {
+    margin-top: 8px;
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Resaltado de búsqueda */
+mark {
+    background-color: #fff3cd !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    color: #856404 !important;
+    font-weight: 600;
+}
+
+/* Mensaje de sin resultados */
+#noResultsRow td {
+    text-align: center !important;
+    padding: 40px !important;
+    color: #666 !important;
+    font-style: italic;
+}
+
+#noResultsRow .fa-search {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ccc;
+    display: block;
+}
+
+/* Animaciones para filas filtradas */
+.utils-table tr {
+    transition: all 0.3s ease;
+}
+
+.utils-table tr[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* Responsive para búsqueda */
+@media (max-width: 768px) {
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .search-box input {
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    #searchStats {
+        text-align: center;
+    }
+}
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    width: 95%;
+    height: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+}
+
+.modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .utils-table {
+        font-size: 14px;
+    }
+    
+    .utils-table th,
+    .utils-table td {
+        padding: 10px;
+    }
+    
+    .tool-info {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .modal-content {
+        width: 98%;
+        height: 95%;
+        margin: 10px;
+    }
+    
+    .modal-header {
+        padding: 15px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.utils-table tr {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.utils-table tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.utils-table tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.utils-table tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Loading state */
+.loading-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #667eea;
+    font-size: 18px;
+}
+
+.loading-frame i {
+    margin-right: 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
